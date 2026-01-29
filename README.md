@@ -1,6 +1,6 @@
-# {{crew_name}} Crew
+# Resume Crew
 
-Welcome to the {{crew_name}} Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to the resume Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
 
 ## Installation
 
@@ -21,12 +21,7 @@ crewai install
 
 ### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/resume_agent_crewai/config/agents.yaml` to define your agents
-- Modify `src/resume_agent_crewai/config/tasks.yaml` to define your tasks
-- Modify `src/resume_agent_crewai/crew.py` to add your own logic, tools and specific args
-- Modify `src/resume_agent_crewai/main.py` to add custom inputs for your agents and tasks
+**Add your `GEMINI_API_KEY` into the `.env` file**
 
 ## Running the Project
 
