@@ -1,0 +1,62 @@
+[
+  {
+    "category": "Header & Personal Branding",
+    "observation": "Missing or outdated professional social proof.",
+    "feedback": "Ensure your GitHub profile and LinkedIn URL are hyperlinked and up-to-date. For technology roles, a GitHub profile with recent activity acts as a secondary portfolio. Ensure your LinkedIn profile is set to 'Open to Work' for recruiters and reflects the same data as your resume.",
+    "action_item": "Add GitHub, LinkedIn, and a link to a personal portfolio/blog if applicable."
+  },
+  {
+    "category": "Professional Summary",
+    "observation": "Using a generic 'Objective' statement instead of a 'Technical Summary'.",
+    "feedback": "Hiring managers spend 6 seconds on the initial screen. An objective tells me what you want; a summary tells me what you can do for me. Focus on years of experience, primary tech stack (e.g., MERN, AWS, Java/Spring), and a major high-level achievement.",
+    "action_item": "Replace the 'Objective' with a 3-sentence 'Technical Profile' highlighting your core architectural strengths and years of specialized experience."
+  },
+  {
+    "category": "Technical Skills Section",
+    "observation": "Skills are listed as a single 'keyword cloud' block.",
+    "feedback": "A wall of text is difficult for human eyes to parse. Grouping skills helps hiring managers quickly identify if your stack aligns with their team's needs.",
+    "action_item": "Categorize skills into sub-sections: 'Languages', 'Frameworks/Libraries', 'Cloud/DevOps', 'Databases', and 'Tools' (e.g., Docker, Kubernetes, Git)."
+  },
+  {
+    "category": "Work Experience - Impact",
+    "observation": "Bullet points describe 'Responsibilities' rather than 'Achievements'.",
+    "feedback": "In tech, it is assumed you coded. I need to know the scale and impact. Statements like 'Responsible for maintaining the database' are weak.",
+    "action_item": "Use the Google XYZ Formula: 'Accomplished [X] as measured by [Y], by doing [Z]'. Example: 'Optimized SQL queries (Z) reducing API latency by 40% (Y) for a platform with 100k DAU (X).'"
+  },
+  {
+    "category": "Tech Stack Context",
+    "observation": "It is unclear which tools were used for specific projects.",
+    "feedback": "Recruiters look for recency of tool usage. If you list React in your skills, I need to see it mentioned in your most recent role to confirm your skills are current.",
+    "action_item": "At the end of each job description or project, add a 'Tech Stack:' line (e.g., Tech Stack: Python, Django, AWS Lambda, PostgreSQL, Terraform)."
+  },
+  {
+    "category": "Quantification of Data",
+    "observation": "Lack of metrics regarding scale.",
+    "feedback": "Technology is about scale. Working on a tool for 5 people is different than 5,000,000. Mentioning data volume, user count, or cost savings provides necessary context.",
+    "action_item": "Audit every bullet point and try to include at least one number (percentages, dollar amounts, time saved, or headcount)."
+  },
+  {
+    "category": "Projects Section",
+    "observation": "Academic or 'Tutorial' projects (like a To-Do list) are included.",
+    "feedback": "For tech roles, 'Tutorial' projects can actually hurt your candidacy by making you look like a beginner. I look for 'Real-World' complexity—apps that are deployed, have users, or solve a specific complex niche problem.",
+    "action_item": "Replace generic projects with ones that demonstrate System Design knowledge, such as an application using microservices, a CI/CD pipeline, or an open-source contribution."
+  },
+  {
+    "category": "ATS Optimization",
+    "observation": "Complex formatting (columns, tables, or graphics) that may break parsing.",
+    "feedback": "Applicant Tracking Systems (ATS) often struggle with multi-column layouts or images. If the software can't read your resume, it won't reach my desk.",
+    "action_item": "Switch to a clean, single-column, standard font (Arial, Calibri) layout. Use standard section headers like 'Experience' and 'Education'."
+  },
+  {
+    "category": "Cloud & Infrastructure",
+    "observation": "Lack of mention regarding deployment or environment.",
+    "feedback": "Modern software engineering is inseparable from the cloud. Even for frontend roles, knowing how your code is deployed is a huge plus.",
+    "action_item": "Explicitly mention experience with AWS, Azure, GCP, or even Heroku/Vercel. Include keywords like 'CI/CD', 'Unit Testing', or 'Containerization' if you have that experience."
+  },
+  {
+    "category": "Education & Certifications",
+    "observation": "Education is at the top despite having work experience.",
+    "feedback": "Once you have 1+ years of experience in tech, your work history is more valuable than your degree. Your experience should lead the document.",
+    "action_item": "Move the Education section to the bottom of the resume and prioritize Technical Certifications (e.g., AWS Certified Developer) just above it."
+  }
+]
