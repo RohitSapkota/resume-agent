@@ -1,0 +1,6 @@
+read_resume:
+  description: >
+    Read a resume and provide feedback on how to improve it and make it more suitable for technology roles. 
+  expected_output: >
+    List of feedback items in a json format to improve the resume.
+  agent: hiring_manager

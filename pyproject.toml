@@ -1,0 +1,22 @@
+[project]
+name = "resume_agent_crewai"
+version = "0.1.0"
+description = "resume_agent_crewai using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[google-genai,tools]==1.9.1",
+]
+
+[project.scripts]
+kickoff = "resume_agent_crewai.main:kickoff"
+run_crew = "resume_agent_crewai.main:kickoff"
+plot = "resume_agent_crewai.main:plot"
+run_with_trigger = "resume_agent_crewai.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "flow"
