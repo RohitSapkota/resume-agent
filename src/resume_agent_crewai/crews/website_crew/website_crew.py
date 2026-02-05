@@ -10,8 +10,8 @@ gemini_api_key = os.getenv("GEMINI_API_KEY")
 
 
 @CrewBase
-class ResumeCrew:
-    """Resume Crew"""
+class WebsiteCrew:
+    """Website Crew"""
 
     agents: List[BaseAgent]
     tasks: List[Task]
@@ -20,64 +20,64 @@ class ResumeCrew:
     tasks_config = "config/tasks.yaml"
 
     @agent
-    def resume_analyst(self) -> Agent:
+    def content_strategist(self) -> Agent:
         return Agent(
-            config=self.agents_config["resume_analyst"],
+            config=self.agents_config["content_strategist"],
             llm=LLM(model="gemini/gemini-3-flash-preview", api_key=gemini_api_key),
         )
 
     @agent
-    def impact_editor(self) -> Agent:
+    def visual_designer(self) -> Agent:
         return Agent(
-            config=self.agents_config["impact_editor"],
+            config=self.agents_config["visual_designer"],
             llm=LLM(model="gemini/gemini-3-flash-preview", api_key=gemini_api_key),
         )
 
     @agent
-    def ats_reviewer(self) -> Agent:
+    def accessibility_reviewer(self) -> Agent:
         return Agent(
-            config=self.agents_config["ats_reviewer"],
+            config=self.agents_config["accessibility_reviewer"],
             llm=LLM(model="gemini/gemini-3-flash-preview", api_key=gemini_api_key),
         )
 
     @agent
-    def hiring_manager(self) -> Agent:
+    def website_engineer(self) -> Agent:
         return Agent(
-            config=self.agents_config["hiring_manager"],
+            config=self.agents_config["website_engineer"],
             llm=LLM(model="gemini/gemini-3-flash-preview", api_key=gemini_api_key),
         )
 
     @task
-    def analyze_structure(self) -> Task:
+    def craft_content_outline(self) -> Task:
         return Task(
-            config=self.tasks_config["analyze_structure"],  # type: ignore[index]
+            config=self.tasks_config["craft_content_outline"],  # type: ignore[index]
         )
 
     @task
-    def rewrite_for_impact(self) -> Task:
+    def define_visual_direction(self) -> Task:
         return Task(
-            config=self.tasks_config["rewrite_for_impact"],  # type: ignore[index]
+            config=self.tasks_config["define_visual_direction"],  # type: ignore[index]
         )
 
     @task
-    def check_ats_alignment(self) -> Task:
+    def audit_accessibility(self) -> Task:
         return Task(
-            config=self.tasks_config["check_ats_alignment"],  # type: ignore[index]
+            config=self.tasks_config["audit_accessibility"],  # type: ignore[index]
         )
 
     @task
-    def read_resume(self) -> Task:
+    def generate_resume_site(self) -> Task:
         return Task(
-            config=self.tasks_config["read_resume"],  # type: ignore[index]
+            config=self.tasks_config["generate_resume_site"],  # type: ignore[index]
         )
 
     @crew
     def crew(self) -> Crew:
-        """Creates the Resume Crew"""
+        """Creates the Website Crew"""
 
         return Crew(
-            agents=self.agents,  # Automatically created by the @agent decorator
-            tasks=self.tasks,  # Automatically created by the @task decorator
+            agents=self.agents,
+            tasks=self.tasks,
             process=Process.sequential,
             verbose=True,
         )

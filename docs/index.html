@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Sapkota | DevOps Engineer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="name">Rohit Sapkota</h1>
+            <address class="contact-info">
+                <a href="mailto:rohitsapkota1@gmail.com" aria-label="Email Rohit">rohitsapkota1@gmail.com</a>
+                <span class="separator" aria-hidden="true">|</span>
+                <a href="tel:+61415379080" aria-label="Call Rohit">(+61) 415379080</a>
+                <span class="separator" aria-hidden="true">|</span>
+                <a href="https://linkedin.com/in/rohit-sapkota" target="_blank" rel="noopener" aria-label="LinkedIn Profile">linkedin.com/in/rohit-sapkota</a>
+            </address>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        <section class="experience-section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="timeline">
+                <article class="experience-item current">
+                    <div class="experience-header">
+                        <div class="experience-meta">
+                            <span class="badge active-node">Current Position<span class="sr-only">: Current Position</span></span>
+                            <h3 class="role">DevOps Engineer</h3>
+                            <p class="company">Racing and Wagering Western Australia (RWWA)</p>
+                        </div>
+                        <time class="date-range">Feb 2023 - Present</time>
+                    </div>
+                    <ul class="bullet-points">
+                        <li>Optimized <strong>GitLab CI/CD</strong> pipelines with <strong>Bash</strong>, collaborating with cross-functional teams, and providing expertise in <strong>Git</strong>, <strong>GitLab</strong>, <strong>JFrog Artifactory</strong>, <strong>AWX/Ansible</strong>, and <strong>CICTL</strong> (internally developed Python-based automation tool).</li>
+                        <li>Automated change request workflows in <strong>GitLab CI</strong> using <strong>CICTL</strong>, integrating <strong>Jira Cloud APIs</strong> and <strong>GraphQL</strong> to enhance Jira Service Management efficiency.</li>
+                        <li>Developed a <strong>Python-based AWS Lambda</strong> function to automate the monitoring of <strong>AMI updates</strong> for Windows and Linux instances, eliminating manual checks and triggering build pipelines for customization.</li>
+                        <li>Managed <strong>Kubernetes</strong> infrastructure on <strong>AWS EKS</strong> (GitLab runners, JFrog Artifactory, Rancher, AWX), ensuring high availability and seamless operations.</li>
+                        <li>Contributed to R&D for system modernization, assessing emerging technologies to enhance infrastructure scalability, performance, and operational efficiency.</li>
+                    </ul>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-meta">
+                            <h3 class="role">Volunteer - Team Leader</h3>
+                            <p class="company">DDD Perth</p>
+                        </div>
+                        <time class="date-range">September 2025</time>
+                    </div>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-meta">
+                            <h3 class="role">Software Engineer</h3>
+                            <p class="company">InfoDevelopers Pvt. Ltd. Nepal</p>
+                        </div>
+                        <time class="date-range">Nov 2020 - March 2022</time>
+                    </div>
+                    <ul class="bullet-points">
+                        <li>Led Agile-driven project iterations, ensuring timely delivery of milestones and continuous development improvements.</li>
+                        <li>Developed a <strong>Java Spring Boot</strong> solution to automate government workflows, <strong>reducing manual processes by 80%</strong>.</li>
+                        <li>Designed and implemented <strong>RESTful APIs</strong>, enhancing system integration and enabling seamless interoperability across platforms.</li>
+                        <li>Integrated <strong>digital signature</strong> functionality, securing sensitive data and preventing tampering during transmission.</li>
+                        <li>Collaborated with cross-functional teams to deploy a <strong>microservices-based architecture</strong>, optimizing scalability and performance for web and mobile platforms.</li>
+                        <li>Developed a food ordering management system using <strong>Java, JSP, and Servlets</strong>, improving order processing efficiency and user experience.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <h2 class="section-title">Technical Projects</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <h3 class="project-name">Anomaly Detection in IoT (Federated Learning)</h3>
+                    <p class="project-desc">Designed a federated learning architecture to resolve data scarcity by training models across devices, preserving user privacy through aggregated model weight transmission. Validated with TensorFlow’s Federated Core.</p>
+                    <div class="tech-stack-container" tabindex="0">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">TensorFlow (Federated Core)</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-name">Gambling Help Chat Bot</h3>
+                    <p class="project-desc">Created a chatbot for the RWWA Hackathon providing a safe space for individuals with addiction, offering tailored suggestions and anonymous support.</p>
+                    <div class="tech-stack-container" tabindex="0">
+                        <span class="tech-pill accent-indigo">Gen AI</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">gpt-3.5 Turbo</span>
+                        <span class="tech-pill">Streamlit</span>
+                        <span class="tech-pill">Prompt Engineering</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-name">Government Integrated Office Management (GIOMS)</h3>
+                    <p class="project-desc">A unified solution for all government offices in Nepal, replacing disparate paper-based systems with a fully digitized infrastructure for employee and document management.</p>
+                    <div class="tech-stack-container" tabindex="0">
+                        <span class="tech-pill">Microservices</span>
+                        <span class="tech-pill">Java Spring Boot</span>
+                        <span class="tech-pill">RESTful API</span>
+                        <span class="tech-pill">PostgreSQL</span>
+                        <span class="tech-pill">Keycloak SSO</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="certifications-section">
+            <h2 class="section-title">Specialized Certifications & Training</h2>
+            <div class="bento-grid">
+                <div class="bento-item ai-focus">
+                    <h3 class="bento-title">AI & Deep Learning</h3>
+                    <ul class="cert-list">
+                        <li>Multi-Agent Systems with CrewAI <span class="cert-date">2026</span></li>
+                        <li>Agentic AI <span class="cert-date">2025</span></li>
+                        <li>Deep Learning Specialization <span class="cert-date">2025</span></li>
+                        <li>Sequence Models / CNNs <span class="cert-date">2025</span></li>
+                        <li>Generative AI with LLMs <span class="cert-date">2025</span></li>
+                        <li>Linear Algebra for ML <span class="cert-date">2024</span></li>
+                    </ul>
+                </div>
+                <div class="bento-item">
+                    <h3 class="bento-title">Cloud & Infrastructure</h3>
+                    <ul class="cert-list">
+                        <li>AWS Certified AI Practitioner <span class="cert-date">2025</span></li>
+                        <li>Google Cloud: Scientific Data Processing <span class="cert-date">2019</span></li>
+                        <li>Google Cloud: Baseline ML & AI <span class="cert-date">2019</span></li>
+                    </ul>
+                </div>
+                <div class="bento-item">
+                    <h3 class="bento-title">Networking & Management</h3>
+                    <ul class="cert-list">
+                        <li>CCNA: Enterprise, Security, Automation <span class="cert-date">2024</span></li>
+                        <li>CCNA: Switching & Routing <span class="cert-date">2024</span></li>
+                        <li>Google Project Management <span class="cert-date">2022</span></li>
+                        <li>Curtin Leaders Program <span class="cert-date">2022</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="education-footer">
+            <h2 class="section-title">Education</h2>
+            <div class="edu-item">
+                <strong>Curtin University, Australia</strong>
+                <span>Masters of Computing (Major in Computer Science) | Feb 2022 - June 2024</span>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

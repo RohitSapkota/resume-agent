@@ -1,0 +1,72 @@
+craft_content_outline:
+  description: >
+    From `resume_text`, extract a clean information architecture: section order, concise headings,
+    and scannable hierarchy. Include guidance on emphasis/de-emphasis. Do not invent content or add facts.
+    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
+    
+    Resume text:
+    {resume_text}
+  expected_output: >
+    A JSON object with:
+    - sections (array of objects: {heading, guidance[]})
+    - reorganizations (array of strings)
+    - narrative_emphasis (string)
+  agent: content_strategist
+  async_execution: true
+
+define_visual_direction:
+  description: >
+    Propose a distinctive visual direction for the resume site: typography pairing, spacing scale,
+    color palette, and layout motifs. Keep it professional, readable, and responsive. Be specific.
+    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
+    
+    Resume text:
+    {resume_text}
+  expected_output: >
+    A JSON object with:
+    - typography (object: {primary, secondary, usage})
+    - spacing (object: {scale, rules})
+    - palette (array of objects: {name, hex, role})
+    - motifs (array of strings)
+  agent: visual_designer
+  async_execution: true
+
+audit_accessibility:
+  description: >
+    Review structure/design guidance. Identify accessibility risks and propose fixes for semantic HTML,
+    contrast, focus states, and keyboard navigation.
+    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
+    
+    Resume text:
+    {resume_text}
+  expected_output: >
+    A JSON object with:
+    - risks (array of strings)
+    - fixes (array of strings)
+    - requirements (array of strings)
+  agent: accessibility_reviewer
+  context: [craft_content_outline, define_visual_direction]
+
+generate_resume_site:
+  description: >
+    Create a static resume website from `resume_text`, applying the content outline,
+    visual direction, and accessibility guidance. Return HTML, CSS, and JS that renders a clean,
+    modern, and readable resume website. Use semantic HTML, strong typography, and responsive
+    layout. Use minimal, purposeful JavaScript only (no frameworks). Fonts may be loaded from
+    Google Fonts. Ensure the layout is GitHub Pages-friendly (plain HTML + CSS + JS). Enforce
+    contrast, focus states, and mobile-first layout. Do not include placeholder text.
+    Use ONLY facts from `resume_text` and do not invent content. Do not add new skills, companies,
+    dates, titles, metrics, or projects not present in `resume_text`. If data is missing, omit the
+    section or leave it blank. You may reformat or reorder but must preserve factual content.
+    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
+    
+    Resume text:
+    {resume_text}
+  expected_output: >
+    A JSON object with:
+    - title (string)
+    - html (string) full HTML document referencing "styles.css" and "script.js"
+    - css (string) stylesheet content for "styles.css"
+    - js (string) script content for "script.js"
+  agent: website_engineer
+  context: [craft_content_outline, define_visual_direction, audit_accessibility]

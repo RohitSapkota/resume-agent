@@ -13,9 +13,12 @@ class MyCustomToolInput(BaseModel):
 
 class MyCustomTool(BaseTool):
     name: str = "Name of my tool"
-    description: str = "Clear description for what this tool is useful for, your agent will need this information to use it."
+    description: str = (
+        "Clear description of what this tool is useful for. "
+        "Your agent will need this information to use it."
+    )
     args_schema: Type[BaseModel] = MyCustomToolInput
 
     def _run(self, argument: str) -> str:
         # Implementation goes here
-        return "this is an example of a tool output, ignore it and move along."
+        return "This is an example of a tool output; ignore it and move along."

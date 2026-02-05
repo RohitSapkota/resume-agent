@@ -1,0 +1,335 @@
+:root {
+    --void-black: #0B0C10;
+    --cloud-white: #F1F4F9;
+    --cyber-blue: #45A29E;
+    --electric-indigo: #818CF8;
+    --steel-gray: #1F2833;
+    --slate-muted: #CBD5E1;
+    --base-unit: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--void-black);
+    color: var(--cloud-white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    padding-bottom: 64px;
+}
+
+h1, h2, h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 calc(var(--base-unit) * 2.5);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--cyber-blue);
+    color: var(--void-black);
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Header */
+.header {
+    padding: 48px 0 64px;
+    text-align: center;
+}
+
+.name {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin-bottom: 16px;
+    color: var(--cloud-white);
+}
+
+.contact-info {
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--cyber-blue);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.contact-info a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: 4px 8px;
+}
+
+.contact-info a:hover, .contact-info a:focus {
+    color: var(--electric-indigo);
+    outline: 2px solid var(--cyber-blue);
+    outline-offset: 4px;
+}
+
+/* Sections */
+.section-title {
+    font-size: 24px;
+    color: var(--cloud-white);
+    border-left: 4px solid var(--cyber-blue);
+    padding-left: 16px;
+    margin-bottom: 48px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+section {
+    margin-bottom: 128px;
+}
+
+/* Experience Pipeline */
+.timeline {
+    position: relative;
+    padding-left: 32px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--steel-gray);
+}
+
+.experience-item {
+    position: relative;
+    margin-bottom: 64px;
+}
+
+.experience-item::after {
+    content: '';
+    position: absolute;
+    left: -37px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--steel-gray);
+    border: 3px solid var(--void-black);
+}
+
+.experience-item.current::after {
+    background: var(--cyber-blue);
+    box-shadow: 0 0 10px var(--cyber-blue);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.role {
+    font-size: 20px;
+    color: var(--cloud-white);
+}
+
+.company {
+    color: var(--slate-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+}
+
+.date-range {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    background: var(--steel-gray);
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.bullet-points {
+    list-style: none;
+}
+
+.bullet-points li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: var(--slate-muted);
+}
+
+.bullet-points li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--cyber-blue);
+}
+
+.bullet-points strong {
+    color: var(--cloud-white);
+    font-weight: 600;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    background: var(--steel-gray);
+    padding: 32px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.project-card:hover {
+    border-color: var(--cyber-blue);
+}
+
+.project-name {
+    margin-bottom: 16px;
+    color: var(--electric-indigo);
+}
+
+.project-desc {
+    font-size: 15px;
+    color: var(--slate-muted);
+    margin-bottom: 24px;
+}
+
+.tech-stack-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.tech-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    padding: 4px 10px;
+    background: var(--void-black);
+    color: var(--cyber-blue);
+    border: 1px solid var(--cyber-blue);
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.tech-pill.accent-indigo {
+    color: var(--electric-indigo);
+    border-color: var(--electric-indigo);
+}
+
+/* Bento Box Certifications */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.bento-item {
+    background: var(--steel-gray);
+    padding: 24px;
+    border-radius: 4px;
+}
+
+.bento-item.ai-focus {
+    grid-column: span 1;
+    border-top: 4px solid var(--electric-indigo);
+}
+
+.bento-title {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: var(--cloud-white);
+    opacity: 0.8;
+}
+
+.cert-list {
+    list-style: none;
+}
+
+.cert-list li {
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.cert-date {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--cyber-blue);
+    font-size: 12px;
+}
+
+/* Education Footer */
+.education-footer {
+    margin-bottom: 0;
+}
+
+.edu-item {
+    display: flex;
+    flex-direction: column;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        margin-bottom: 64px;
+    }
+    
+    .header {
+        padding: 24px 0 40px;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+    }
+}
+
+/* Accessibility Focus */
+:focus-visible {
+    outline: 2px solid var(--cyber-blue);
+    outline-offset: 4px;
+}

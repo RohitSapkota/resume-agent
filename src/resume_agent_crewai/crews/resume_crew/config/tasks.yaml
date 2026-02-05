@@ -1,6 +1,74 @@
+analyze_structure:
+  description: >
+    Diagnose structure/clarity issues in the resume below. Identify missing/weak sections,
+    ordering problems, and unclear or redundant content. Propose an improved outline for
+    software/technology roles.
+    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
+    
+    Resume text:
+    {resume_text}
+  expected_output: >
+    A JSON object with:
+    - recommended_section_order (array of strings)
+    - missing_or_weak_sections (array of strings)
+    - clarity_issues (array of strings, 5–10 items)
+  agent: resume_analyst
+  async_execution: true
+
+rewrite_for_impact:
+  description: >
+    Rewrite the weakest experience/project bullets from the resume below to be specific, measurable,
+    and impact-led. Focus on scope, ownership, outcomes, and technical specificity.
+    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
+    
+    Resume text:
+    {resume_text}
+  expected_output: >
+    A JSON array of 6–12 objects, each with:
+    - original_bullet (verbatim)
+    - improved_bullet (rewritten)
+  agent: impact_editor
+  async_execution: true
+
+check_ats_alignment:
+  description: >
+    Review ATS readiness and keyword alignment for software/technology roles based on `resume_text`.
+    Identify parsing risks, formatting pitfalls, and missing/weakly signaled skills. Suggest
+    keyword additions that fit the resume content without stuffing.
+    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
+    
+    Resume text:
+    {resume_text}
+  expected_output: >
+    A JSON object with:
+    - ats_risks (array of strings)
+    - keyword_gaps (array of strings)
+    - formatting_fixes (array of strings)
+  agent: ats_reviewer
+  async_execution: true
+
 read_resume:
   description: >
-    Read a resume and provide feedback on how to improve it and make it more suitable for technology roles. 
+    Synthesize prior analyses and incorporate the user's requested changes (`user_input`) into a
+    prioritized, high-signal feedback list. Use `resume_text` for grounding. Focus on clarity,
+    impact, relevance, and ATS readiness. Provide concrete rewrites for the most important fixes.
+    Enforce strict quality: no generic advice and no duplicative items.
+    Return ONLY valid JSON. Do not wrap in markdown or add commentary. Use only information in `resume_text`
+    and `user_input`. Do not invent facts or metrics.
+    
+    Resume text:
+    {resume_text}
+    
+    User input:
+    {user_input}
   expected_output: >
-    List of feedback items in a json format to improve the resume.
+    A JSON array of feedback items. Each item must include:
+    - category (one of: "structure", "clarity", "impact", "skills", "experience", "projects",
+      "education", "formatting", "ats")
+    - severity ("high" | "medium" | "low")
+    - issue (short description)
+    - recommendation (specific fix)
+    - example_rewrite (optional string)
+    Keep the list prioritized by severity, then impact. Include 8–18 items total.
   agent: hiring_manager
+  context: [analyze_structure, rewrite_for_impact, check_ats_alignment]
