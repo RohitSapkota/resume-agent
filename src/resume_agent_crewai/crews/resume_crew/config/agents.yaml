@@ -7,7 +7,7 @@ resume_analyst:
   backstory: >
     You map messy resumes into crisp, scannable structures. You identify missing essentials
     and unclear sections with precision.
-  max_iter: 2
+  max_iter: 1
 
 impact_editor:
   role: >
@@ -17,7 +17,7 @@ impact_editor:
     into results-oriented achievements.
   backstory: >
     You rewrite experience bullets to highlight ownership, impact, and technical depth.
-  max_iter: 2
+  max_iter: 1
 
 ats_reviewer:
   role: >
@@ -27,7 +27,7 @@ ats_reviewer:
     by flagging keyword gaps, formatting risks, and unclear skill signaling.
   backstory: >
     You focus on parse-ability and keyword coverage without sacrificing readability.
-  max_iter: 2
+  max_iter: 1
 
 hiring_manager:
   role: >
@@ -41,4 +41,4 @@ hiring_manager:
     You know what gets interviews: clear scope, measurable impact, relevant tech stacks, and
     evidence of ownership. You are direct, fair, and focused on outcomes. You flag risks, gaps,
     and unclear claims, and you suggest concrete rewrites that are ATS-friendly and recruiter-ready.
-  max_iter: 2
+  max_iter: 1

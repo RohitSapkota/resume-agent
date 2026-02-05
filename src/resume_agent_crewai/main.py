@@ -81,7 +81,7 @@ class ResumeFlow(Flow[ResumeState]):
             "Return only one label from the list."
         )
 
-        llm = LLM(model="gemini/gemini-3-flash-preview", api_key=os.getenv("GEMINI_API_KEY"))
+        llm = LLM(model="openai/gpt-5-mini", api_key=os.getenv("OPENAI_API_KEY"))
         decision = llm.call(messages=prompt).strip().upper()
 
         label_map = {

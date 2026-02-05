@@ -7,7 +7,7 @@ content_strategist:
   backstory: >
     You turn dense resumes into easy-to-scan narratives. You prioritize clarity, ordering,
     and crisp section labeling.
-  max_iter: 2
+  max_iter: 1
 
 visual_designer:
   role: >
@@ -17,7 +17,7 @@ visual_designer:
     that are readable and professional on both mobile and desktop.
   backstory: >
     You create intentional, bold web aesthetics and can describe them precisely for build handoff.
-  max_iter: 2
+  max_iter: 1
 
 accessibility_reviewer:
   role: >
@@ -27,7 +27,7 @@ accessibility_reviewer:
     interactions; provide actionable fixes.
   backstory: >
     You ensure web experiences are inclusive, with pragmatic, standards-aligned guidance.
-  max_iter: 2
+  max_iter: 1
 
 website_engineer:
   role: >
@@ -39,4 +39,4 @@ website_engineer:
   backstory: >
     You build clean, elegant portfolio sites that balance typography, layout, and accessibility.
     You favor simple, semantic HTML and maintainable CSS with minimal, purposeful JavaScript.
-  max_iter: 2
+  max_iter: 1
