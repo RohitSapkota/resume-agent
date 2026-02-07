@@ -1,105 +1,110 @@
 # Resume Agent (crewAI)
 
-This project orchestrates multi-agent crews to:
-- critique and improve resumes
-- generate a polished static resume website (HTML/CSS/JS)
+`resume_agent_crewai` is a multi-agent workflow that improves a resume PDF and can generate a portfolio-style static website from that resume.
 
-It is powered by [crewAI](https://crewai.com) and configured for parallel task execution where possible, with explicit data handoff between dependent tasks.
+It is built with [crewAI](https://crewai.com), uses Gemini + OpenAI models, and is designed to preserve factual accuracy (no invented experience, skills, or metrics).
 
-## Installation
+## What This Project Does
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling.
+You can run one of two paths:
 
-First, if you haven't already, install uv from the official site:
+- `update_resume`
+  - Reads `src/resume_agent_crewai/Resume.pdf`
+  - Reviews it for AI/software hiring quality and ATS readiness
+  - Produces:
+    - updated PDF: `src/resume_agent_crewai/resume_updated.pdf`
+    - review artifacts: `src/resume_agent_crewai/artifacts/review.json`
+
+- `create_website`
+  - Runs the full resume update pipeline first
+  - Uses the reviewed resume text to generate a static site
+  - Produces:
+    - `docs/index.html`
+    - `docs/styles.css`
+    - `docs/script.js`
+    - metadata: `docs/build_meta.json`
+
+## How It Works
+
+The flow is defined in `src/resume_agent_crewai/main.py`.
+
+Resume pipeline:
+1. Fingerprint source resume + request (for caching)
+2. Read resume PDF via tool
+3. Review content quality and hiring signal
+4. Revise text and write updated PDF
+5. Save feedback + build metadata
+
+Website pipeline:
+1. Build content outline from reviewed resume text
+2. Generate semantic, responsive HTML/CSS/JS
+3. Validate output and write files to `docs/`
+
+Guardrails:
+- Factual integrity checks (no invented resume facts)
+- Output schema checks for JSON/tool responses
+- Content overlap check before publishing generated website content
+
+## Tech Stack
+
+- Python `>=3.10,<3.14`
+- `crewai[google-genai,tools]==1.9.3`
+- `pypdf`
+- UV for dependency management
+
+## Quick Start
+
+1. Install dependencies:
 
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
+uv sync
 ```
 
-Next, navigate to your project directory and install the dependencies:
+2. Add API keys in `.env`:
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-
-### Configuration
-
-**Add your `GEMINI_API_KEY` and `OPENAI_API_KEY` into the `.env` file**
-
-Example `.env`:
 ```env
 GEMINI_API_KEY=your_key_here
 OPENAI_API_KEY=your_key_here
 ```
 
-## Running the Project
-
-To kickstart your flow and begin execution, run this from the root folder of your project:
+3. Run interactive flow:
 
 ```bash
-crewai run
+uv run crewai run
 ```
 
-This command initializes the `resume_agent_crewai` Flow as defined in your configuration.
+You will be prompted to choose `update_resume` or `create_website`.
 
-## Outputs
+## Triggered Runs (No Prompts)
 
-Depending on your flow configuration, you should expect:
-- Resume Crew: finalized factual resume text, prioritized feedback, and a new updated PDF at `src/resume_agent_crewai/resume_updated.pdf`
-- Website Crew: `index.html`, `styles.css`, `script.js`, and `build_meta.json` written to `docs/`
+Run with JSON payload:
 
-## Crews Overview
-
-The project includes two crews:
-
-- Resume Crew: A reader/writer + analysis pipeline that reads `Resume.pdf` via tool, evaluates and rewrites to a high AI-engineer standard, preserves factual content, and writes an updated PDF.
-- Website Crew: A pipeline that transforms reviewed resume content into a static GitHub Pages-friendly site.
-
-## New Core Flow
-
-1. User selects one path: `update_resume` or `create_website`.
-2. `update_resume`: runs only the Resume Crew and outputs `resume_updated.pdf`.
-3. `create_website`: runs Resume Crew first, then Website Crew using the reviewed resume text.
-4. User-requested additions (for example, new experience or certifications) are incorporated without inventing facts.
-
-Task coordination supports parallel execution where configured (`async_execution: true`) and uses `context` for dependent handoffs. In the new resume-first flow, resume tasks are intentionally sequential for strict factual control.
-
-Crew configuration lives in:
-- `src/resume_agent_crewai/crews/resume_crew/config/agents.yaml`
-- `src/resume_agent_crewai/crews/resume_crew/config/tasks.yaml`
-- `src/resume_agent_crewai/crews/website_crew/config/agents.yaml`
-- `src/resume_agent_crewai/crews/website_crew/config/tasks.yaml`
-
-## How Task Coordination Works
-
-Independent tasks run in parallel only where `async_execution: true` is configured. Dependent tasks receive upstream outputs via `context`, and sequential execution is used where strict ordering is required.
-
-## Common Changes
-
-If you want to customize behavior:
-- Update agent roles and goals in `config/agents.yaml`.
-- Update task prompts, expectations, or dependencies in `config/tasks.yaml`.
-- Change model or provider in `crews/*/*_crew.py`.
-
-## Example Usage
-
-Run the flow:
 ```bash
-crewai run
+uv run run_with_trigger '{"user_path":"create_website","user_request":"include my latest certification if present"}'
 ```
 
-Trigger-based run example:
+Other example:
+
 ```bash
-run_with_trigger '{"user_request":"create a resume website and include my latest certification"}'
+uv run run_with_trigger '{"user_path":"update_resume","user_request":"tighten bullet points for impact"}'
 ```
 
-If you want to execute only one crew, update the flow entrypoint in:
-- `src/resume_agent_crewai/main.py`
+## Repository Layout
 
-## Support
+- `src/resume_agent_crewai/main.py`: Flow routing, validation, caching, artifact writing
+- `src/resume_agent_crewai/crews/resume_crew/`: Resume agents + tasks
+- `src/resume_agent_crewai/crews/website_crew/`: Website agents + tasks
+- `src/resume_agent_crewai/tools/pdf_tool.py`: Resume PDF read/write tools
+- `src/resume_agent_crewai/artifacts/`: Review + build metadata artifacts
+- `docs/`: Generated static website files (GitHub Pages-friendly)
 
-For support, questions, or feedback regarding crewAI:
-- Visit the [documentation](https://docs.crewai.com)
-- Reach out via the [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join the Discord](https://discord.com/invite/X4JWnZnxPb)
+## Customization
+
+- Agent behavior: `src/resume_agent_crewai/crews/*/config/agents.yaml`
+- Task prompts/outputs: `src/resume_agent_crewai/crews/*/config/tasks.yaml`
+- Model selection: `src/resume_agent_crewai/crews/*/*_crew.py`
+
+## Notes
+
+- Source resume must exist at `src/resume_agent_crewai/Resume.pdf` (or adjust path in `main.py`).
+- The project is optimized for factual rewriting and clean static output, not for adding missing resume content automatically.
