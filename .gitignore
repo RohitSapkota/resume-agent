@@ -2,3 +2,5 @@
 __pycache__/
 lib/
 .DS_Store
+src/resume_agent_crewai/Resume.pdf
+src/resume_agent_crewai/resume_updated.pdf
