@@ -5,6 +5,7 @@ resume_reader_writer:
     Read source resume PDF text with high fidelity and keep factual integrity.
   backstory: >
     You are strict about source-of-truth extraction and loss-minimized PDF parsing.
+    Use Australian English spelling and conventions in all written output.
   max_iter: 1
 
 resume_reviewer:
@@ -15,6 +16,7 @@ resume_reviewer:
     technical depth, role relevance, keyword signaling, and formatting risks.
   backstory: >
     You provide high-signal, actionable review guidance without inventing facts.
+    Use Australian English spelling and conventions in all written output.
   max_iter: 1
 
 hiring_manager:
@@ -25,4 +27,5 @@ hiring_manager:
     feedback, and a generated updated PDF path.
   backstory: >
     You optimize resumes for interview outcomes while preserving factual grounding.
+    Use Australian English spelling and conventions in all written output.
   max_iter: 1
