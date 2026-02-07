@@ -3,68 +3,135 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Rohit Sapkota — Resume</title>
+  <title>Rohit Sapkota — DevOps Engineer</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Roboto:wght@400;500&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" role="banner">
-    <div class="hero">
-      <div class="hero-inner">
-        <h1 class="name">Rohit Sapkota</h1>
-        <p class="subline">
-          <a class="contact-link" href="mailto:rohitsapkota1@gmail.com">rohitsapkota1@gmail.com</a>
-          <span aria-hidden="true">•</span>
-          <a class="contact-link" href="tel:+61415379080">(+61) 415 379 080</a>
-          <span aria-hidden="true">•</span>
-          <a class="contact-link" href="https://linkedin.com/in/rohit-sapkota" target="_blank" rel="noopener">linkedin.com/in/rohit-sapkota</a>
-        </p>
-      </div>
-      <svg class="hero-ornament" width="120" height="40" viewBox="0 0 120 40" aria-hidden="true" focusable="false">
-        <path d="M0 40 L120 4 L120 40 Z" fill="#FBFDFF" opacity="0.6" />
-      </svg>
-    </div>
-  </header>
-
-  <div class="layout">
-    <aside class="sidebar" role="complementary" aria-labelledby="contact-heading">
-      <div class="card contact-card">
-        <h2 id="contact-heading" class="card-title">Contact</h2>
-        <ul class="contact-list">
-          <li><strong>Email</strong>: <a href="mailto:rohitsapkota1@gmail.com">rohitsapkota1@gmail.com</a></li>
-          <li><strong>Phone</strong>: <a href="tel:+61415379080">(+61) 415 379 080</a></li>
-          <li><strong>LinkedIn</strong>: <a href="https://linkedin.com/in/rohit-sapkota" target="_blank" rel="noopener">linkedin.com/in/rohit-sapkota</a></li>
-        </ul>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="page">
+    <header class="site-header" aria-labelledby="name">
+      <div class="identity">
+        <h1 id="name">Rohit Sapkota</h1>
+        <p class="role">DevOps Engineer</p>
       </div>
 
-      <div class="card stack-card" aria-labelledby="stack-heading">
-        <h3 id="stack-heading" class="card-title">Technical stack</h3>
-        <p class="muted">Selected tools & technologies</p>
-        <ul class="chips" role="list">
-          <li class="chip"><span aria-hidden="true" class="chip-icon">⌘</span><span class="chip-label">GitHub Actions</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">λ</span><span class="chip-label">AWS Lambda</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">☁</span><span class="chip-label">AWS (EKS)</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">⚙</span><span class="chip-label">Pulumi (TypeScript)</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">🐳</span><span class="chip-label">Kubernetes</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">🐍</span><span class="chip-label">Python</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">💻</span><span class="chip-label">Bash</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">☁</span><span class="chip-label">JFrog Artifactory</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">🔧</span><span class="chip-label">AWX</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">📋</span><span class="chip-label">Jira Service Management</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">☕</span><span class="chip-label">Java Spring Boot</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">🧠</span><span class="chip-label">TensorFlow Federated</span></li>
-          <li class="chip"><span aria-hidden="true" class="chip-icon">GPT</span><span class="chip-label">GPT-based LLMs</span></li>
-        </ul>
+      <div class="contacts" role="group" aria-label="Contact information">
+        <a class="contact" href="tel:+61415379080" aria-label="Phone number +61 415 379 080">(+61) 415 379 080</a>
+        <a class="contact" href="mailto:rohitsapkota1@gmail.com" aria-label="Email rohitsapkota1 at gmail dot com">rohitsapkota1@gmail.com</a>
+        <a class="contact" href="https://linkedin.com/in/rohit-sapkota" aria-label="LinkedIn profile for Rohit Sapkota" target="_blank" rel="noopener noreferrer">linkedin.com/in/rohit-sapkota</a>
+        <button id="printBtn" class="print-btn" aria-label="Print resume">Print</button>
       </div>
 
-      <div class="card cert-card" aria-labelledby="cert-heading">
-        <h3 id="cert-heading" class="card-title">Certifications</h3>
-        <p class="muted">Grouped highlights</p>
-        <ul class="cert-list" role="list">
-          <li><strong>AI & Machine Learning</strong>
+      <hr class="section-rule" aria-hidden="true">
+    </header>
+
+    <main id="main" class="content" role="main" aria-label="Resume main content">
+
+      <section class="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Core competencies</h2>
+        <div class="skills-grid" role="list">
+          <div class="skill" role="listitem">
+            <strong>Infrastructure &amp; Orchestration</strong>
+            <div class="skill-list">AWS (Lambda, EKS), Kubernetes, Pulumi (TypeScript)</div>
+          </div>
+
+          <div class="skill" role="listitem">
+            <strong>CI/CD &amp; Automation</strong>
+            <div class="skill-list">GitHub Actions, GitLab, JFrog Artifactory, AWX, pipeline design</div>
+          </div>
+
+          <div class="skill" role="listitem">
+            <strong>Programming &amp; Scripting</strong>
+            <div class="skill-list"><span class="mono">Bash</span>, <span class="mono">Python</span>, <span class="mono">TypeScript</span>, <span class="mono">Java</span></div>
+          </div>
+
+          <div class="skill" role="listitem">
+            <strong>AI / ML Operations</strong>
+            <div class="skill-list">TensorFlow Federated, GPT-based LLMs, prompt engineering</div>
+          </div>
+
+          <div class="skill" role="listitem">
+            <strong>Frameworks &amp; Platforms</strong>
+            <div class="skill-list">Java Spring Boot</div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-rule" aria-hidden="true">
+
+      <section class="experience" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Professional experience</h2>
+
+        <article class="role rwwa" aria-labelledby="rwwa-title">
+          <header>
+            <h3 id="rwwa-title">RACING AND WAGERING WESTERN AUSTRALIA (RWWA) — DevOps Engineer</h3>
+            <p class="date">Feb 2023 – Present</p>
+          </header>
+          <ul class="bullets">
+            <li>Led a CI/CD modernisation initiative migrating from GitLab to GitHub Actions, reducing deployment time by ~30% and significantly improving release reliability.</li>
+            <li>Eliminated frequent pipeline failures by decommissioning unstable legacy tooling (JFrog Artifactory, AWX), resulting in near-zero CI/CD failures post-migration.</li>
+            <li>Reduced platform complexity by consolidating CI/CD and deployment workflows on GitHub and AWS-native services, lowering operational overhead.</li>
+            <li>Designed and automated CI/CD workflows using Bash and Python, enabling faster, reproducible iteration cycles for data- and AI-driven workloads.</li>
+            <li>Implemented infrastructure-as-code using Pulumi (TypeScript) to provision modern cloud stacks, improving consistency, traceability, and deployment safety.</li>
+            <li>Built event-driven AWS Lambda automation to monitor Windows and Linux AMI updates and trigger downstream build pipelines, improving security posture and eliminating manual checks.</li>
+            <li>Operated and scaled Kubernetes infrastructure on AWS EKS, ensuring highly available execution environments for platform, data, and automation workloads.</li>
+            <li>Automated change management by integrating CI/CD workflows with Jira Service Management (JSM) via REST and GraphQL APIs, reducing manual approvals and improving end-to-end release throughput.</li>
+          </ul>
+        </article>
+
+        <article class="role ddd-perth" aria-labelledby="ddd-title">
+          <header>
+            <h3 id="ddd-title">DDD PERTH — Volunteer Team Lead</h3>
+            <p class="date">September 2025</p>
+          </header>
+          <p class="muted">Led a volunteer team, coordinating delivery and technical direction for community-driven initiatives.</p>
+        </article>
+
+        <article class="role infodev" aria-labelledby="infodev-title">
+          <header>
+            <h3 id="infodev-title">INFODEVELOPERS PVT. LTD., Nepal — Software Engineer</h3>
+            <p class="date">Nov 2020 – Mar 2022</p>
+          </header>
+          <ul class="bullets">
+            <li>Built a Java Spring Boot platform automating government workflows, reducing manual processing by approximately 80%.</li>
+            <li>Designed RESTful APIs and contributed to a microservices architecture improving scalability, integration, and system reliability.</li>
+            <li>Integrated digital signature and secure authentication mechanisms to protect sensitive data.</li>
+          </ul>
+        </article>
+      </section>
+
+      <hr class="section-rule" aria-hidden="true">
+
+      <section class="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected technical projects</h2>
+
+        <div class="project-list">
+          <article class="project" aria-labelledby="proj-ci">
+            <h3 id="proj-ci">Enterprise CI/CD Modernisation and GitHub Migration (RWWA)</h3>
+            <p>Architected and executed a migration from GitLab to GitHub Actions, consolidating CI/CD tooling and removing multiple failure-prone dependencies. Standardised pipeline patterns and IaC-driven deployments to improve reliability, maintainability, and auditability across services.</p>
+          </article>
+
+          <article class="project" aria-labelledby="proj-fed">
+            <h3 id="proj-fed">Federated Anomaly Detection for IoT (Curtin University)</h3>
+            <p>Designed a federated learning architecture enabling privacy-preserving anomaly detection across distributed IoT devices. Validated the approach using TensorFlow Federated to enable secure training without centralising sensitive data.</p>
+          </article>
+
+          <article class="project" aria-labelledby="proj-ai">
+            <h3 id="proj-ai">Generative AI Gambling Help Chatbot (RWWA Hackathon)</h3>
+            <p>Built a generative AI chatbot providing anonymous, empathetic support using GPT-based LLMs and prompt engineering.</p>
+          </article>
+        </div>
+      </section>
+
+      <hr class="section-rule" aria-hidden="true">
+
+      <section class="certifications" aria-labelledby="certs-heading">
+        <h2 id="certs-heading">Professional certifications</h2>
+        <div class="cert-grid">
+          <div class="cert-column">
+            <h4>AI / Deep Learning (2024–2026)</h4>
             <ul>
               <li>Design, Develop, and Deploy Multi-Agent Systems with CrewAI — DeepLearning.AI (Jan 2026)</li>
               <li>Agentic AI — DeepLearning.AI (Nov 2025)</li>
@@ -76,130 +143,38 @@
               <li>Improving Deep Neural Networks: Hyperparameters, Tuning, Regularisation and Optimisation — DeepLearning.AI (Apr 2025)</li>
               <li>Neural Networks and Deep Learning — DeepLearning.AI (Mar 2025)</li>
               <li>Generative AI with Large Language Models — DeepLearning.AI, AWS (Mar 2025)</li>
+              <li>Linear Algebra for Machine Learning and Data Science — DeepLearning.AI (Jan 2024)</li>
             </ul>
-          </li>
-          <li><strong>Cloud & Infrastructure</strong>
+          </div>
+
+          <div class="cert-column">
+            <h4>Networking / CCNA</h4>
             <ul>
               <li>CCNA: Enterprise Networking, Security and Automation — Cisco (Jun 2024)</li>
               <li>CCNA: Switching, Routing, and Wireless Essentials — Cisco (Jun 2024)</li>
               <li>CCNA: Introduction to Networks — Cisco (Jun 2024)</li>
-              <li>Google Cloud – Scientific Data Processing — Google Cloud Skills Boost (May 2019)</li>
-              <li>Google Cloud – Baseline: Data, ML, AI — Google Cloud Skills Boost (Mar 2019)</li>
             </ul>
-          </li>
-          <li><strong>Professional Foundations</strong>
+
+            <h4>Project Management &amp; Other</h4>
             <ul>
-              <li>Linear Algebra for Machine Learning and Data Science — DeepLearning.AI (Jan 2024)</li>
               <li>Foundations of Project Management — Google (Dec 2022)</li>
               <li>Learning How to Learn — Deep Teaching Solutions (Dec 2022)</li>
               <li>Python Programming: A Concise Introduction — Wesleyan University (Dec 2022)</li>
               <li>Curtin Leaders Program — Curtin University (Nov 2022)</li>
-            </ul>
-          </li>
-        </ul>
-        <button id="printBtn" class="print-btn" type="button">Print / Save PDF</button>
-      </div>
-    </aside>
-
-    <main id="main" class="main-content" role="main">
-      <section class="card" aria-labelledby="exp-heading">
-        <h2 id="exp-heading" class="section-title">Professional Experience</h2>
-
-        <article class="role" aria-labelledby="rwwa-heading">
-          <header class="role-header">
-            <h3 id="rwwa-heading">Racing and Wagering Western Australia (RWWA) — DevOps Engineer</h3>
-            <p class="role-meta"><span class="muted">Feb 2023 – Present</span></p>
-          </header>
-
-          <div class="role-body">
-            <p class="intro">Lead engineer on CI/CD modernisation, infrastructure automation and platform reliability for platform, data and AI/automation workloads.</p>
-
-            <div class="subcard">
-              <div class="accent" aria-hidden="true"></div>
-              <h4 class="subcard-title">CI/CD & Release Engineering</h4>
-              <ul>
-                <li>Led a CI/CD modernisation initiative migrating from GitLab to GitHub Actions, <strong>reducing deployment time by ~30%</strong> and significantly improving release reliability.</li>
-                <li>Decommissioned unstable legacy tooling (JFrog Artifactory, AWX), eliminating frequent pipeline failures and resulting in near-zero CI/CD failures post-migration.</li>
-                <li>Consolidated CI/CD and deployment workflows on GitHub and AWS-native services, lowering operational overhead and standardising pipeline patterns and IaC-driven deployments.</li>
-              </ul>
-            </div>
-
-            <div class="subcard">
-              <div class="accent" aria-hidden="true"></div>
-              <h4 class="subcard-title">Infrastructure & Platform</h4>
-              <ul>
-                <li>Implemented infrastructure as code using Pulumi (TypeScript) to provision modern cloud stacks—improving consistency, traceability and deployment safety.</li>
-                <li>Operated and scaled Kubernetes infrastructure on AWS EKS to provide highly available execution environments for platform, data, and automation workloads.</li>
-              </ul>
-            </div>
-
-            <div class="subcard">
-              <div class="accent" aria-hidden="true"></div>
-              <h4 class="subcard-title">Automation & Integrations</h4>
-              <ul>
-                <li>Designed and automated CI/CD workflows using Bash and Python for faster, reproducible iteration cycles for data- and AI-driven workloads.</li>
-                <li>Built event-driven AWS Lambda automation to monitor Windows and Linux AMI updates and trigger downstream build pipelines—improving security posture and removing manual checks.</li>
-                <li>Automated change management by integrating CI/CD workflows with Jira Service Management (JSM) via REST and GraphQL APIs, reducing manual approvals and improving end-to-end release throughput.</li>
-              </ul>
-            </div>
-
-            <div class="note muted">Enterprise CI/CD modernisation work (migration, standardisation, IaC-driven deployments) is included above as part of RWWA responsibilities.</div>
-          </div>
-        </article>
-
-        <article class="role" aria-labelledby="info-heading">
-          <header class="role-header">
-            <h3 id="info-heading">Infodevelopers Pvt. Ltd., Nepal — Software Engineer</h3>
-            <p class="role-meta"><span class="muted">Nov 2020 – Mar 2022</span></p>
-          </header>
-          <div class="role-body">
-            <ul>
-              <li>Built a Java Spring Boot platform automating government workflows, reducing manual processing by approximately <strong>80%</strong>.</li>
-              <li>Designed RESTful APIs and contributed to a microservices architecture to improve scalability, integration and system reliability.</li>
-              <li>Integrated digital signature and secure authentication mechanisms to protect sensitive data.</li>
+              <li>Google Cloud – Scientific Data Processing — Google Cloud Skills Boost (May 2019)</li>
+              <li>Google Cloud – Baseline: Data, ML, AI — Google Cloud Skills Boost (Mar 2019)</li>
             </ul>
           </div>
-        </article>
-
-      </section>
-
-      <section class="card" aria-labelledby="projects-heading">
-        <h2 id="projects-heading" class="section-title">Strategic Technical Projects</h2>
-
-        <div class="project">
-          <h3 class="project-title">Federated Anomaly Detection for IoT (Curtin University)</h3>
-          <ul>
-            <li>Designed a federated learning architecture enabling privacy-preserving anomaly detection across distributed IoT devices.</li>
-            <li>Validated the approach using TensorFlow Federated to enable secure training on high-sensitivity datasets without centralising data.</li>
-          </ul>
         </div>
-
-        <div class="project">
-          <h3 class="project-title">Generative AI Gambling Help Chatbot (RWWA Hackathon)</h3>
-          <ul>
-            <li>Built a generative AI chatbot providing anonymous, empathetic support using GPT-based LLMs and prompt engineering.</li>
-          </ul>
-        </div>
-
-      </section>
-
-      <section class="card" aria-labelledby="leadership-heading">
-        <h2 id="leadership-heading" class="section-title">Leadership & Community</h2>
-        <article>
-          <h3>DDD Perth — Volunteer Team Lead</h3>
-          <p class="muted">September 2025</p>
-          <p>Led a volunteer team, coordinating delivery and technical direction for community-driven initiatives.</p>
-        </article>
       </section>
 
     </main>
-  </div>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <p class="muted">Resume content: Rohit Sapkota — contact details and experience as listed.</p>
-    </div>
-  </footer>
+    <footer class="site-footer" role="contentinfo">
+      <hr class="section-rule" aria-hidden="true">
+      <p>Contact: <a href="mailto:rohitsapkota1@gmail.com" aria-label="Email rohitsapkota1 at gmail dot com">rohitsapkota1@gmail.com</a> • <a href="https://linkedin.com/in/rohit-sapkota" aria-label="LinkedIn profile for Rohit Sapkota" target="_blank" rel="noopener noreferrer">linkedin.com/in/rohit-sapkota</a></p>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>

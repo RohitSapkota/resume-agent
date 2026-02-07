@@ -1,0 +1,99 @@
+{
+  "generated_at_utc": "2026-02-07T02:59:34.670701+00:00",
+  "flow_version": "resume-flow-v2",
+  "cache_key": "03dea84d8f463939b98ecc82575c96298f56f8c4221b0798f99097183db05784",
+  "feedback_items": [
+    {
+      "category": "structure",
+      "severity": "high",
+      "issue": "No concise professional summary that frames current career focus for AI/MLOps roles.",
+      "recommendation": "Add a 1\u20132 line professional summary under the name/title that highlights immediate focus areas (cloud infra, CI/CD, MLOps-adjacent tooling) and the value you bring.",
+      "example_rewrite": "DevOps Engineer focused on AWS infrastructure, CI/CD modernisation (GitHub Actions), and enabling reproducible AI experimentation through IaC (Pulumi) and automated pipelines."
+    },
+    {
+      "category": "skills",
+      "severity": "high",
+      "issue": "Missing key AI-engineering / MLOps keywords that ATS and hiring managers expect (e.g., Docker, model serving, registries, monitoring).",
+      "recommendation": "If you have experience with these, add them to Skills as distinct entries (Docker, MLflow/SageMaker/ML registries, Prometheus/Grafana, model serving frameworks). If not, avoid listing unfamiliar tools.",
+      "example_rewrite": "Skills\n- Containers & Runtime: Docker\n- Model Ops: MLflow, SageMaker, model registry (add only if experienced)\n- Observability: Prometheus, Grafana, CloudWatch"
+    },
+    {
+      "category": "ats",
+      "severity": "high",
+      "issue": "Residual date inconsistency and a future-dated role (DDD PERTH \u2014 September 2025) may confuse ATS/recruiters.",
+      "recommendation": "Confirm the correct date for the volunteer role and correct it to past or present as appropriate; use a standardized format (e.g., 'Sep 2025' or 'Sep 2025 \u2013 Present').",
+      "example_rewrite": "DDD PERTH \u2014 Volunteer Team Lead | Sep 2023 \u2013 Present (confirm actual dates)"
+    },
+    {
+      "category": "impact",
+      "severity": "medium",
+      "issue": "Many bullets show positive outcomes but lack ownership and scale context (team size, number of services, frequency of deployments).",
+      "recommendation": "Where possible, add concise scope/scale metrics to strengthen impact statements (services affected, team size, deployment cadence).",
+      "example_rewrite": "Led CI/CD migration for ~[N] microservices, enabling daily deployments and reducing mean time to release by ~30%."
+    },
+    {
+      "category": "ai_focus",
+      "severity": "medium",
+      "issue": "AI / ML project descriptions are brief and do not state model infra details (training scale, inference serving, monitoring or experiment tracking).",
+      "recommendation": "Expand project bullets to name frameworks/tools used for training, serving, experiment tracking and any measurable result or validation.",
+      "example_rewrite": "Federated Anomaly Detection \u2014 Built privacy-preserving pipeline using TensorFlow Federated; integrated experiment tracking with [Tool] and validated model AUC on distributed datasets."
+    },
+    {
+      "category": "experience",
+      "severity": "medium",
+      "issue": "Ownership and leadership details are sparse (no counts for engineers/volunteers, product/service ownership).",
+      "recommendation": "Add brief statements of scope where accurate (e.g., 'owned CI/CD for X services' or 'led a team of Y volunteers'). Use placeholders if verifying later, but do not invent numbers.",
+      "example_rewrite": "Owned CI/CD and deployments for X services across production and staging environments (confirm and replace X)."
+    },
+    {
+      "category": "projects",
+      "severity": "medium",
+      "issue": "Project entries lack links to code, demos, or documentation that would substantiate claims.",
+      "recommendation": "Add GitHub/Colab/notebook links for projects you can share, or state 'private/restricted' where applicable to avoid confusion.",
+      "example_rewrite": "Generative AI Gambling Help Chatbot (RWWA Hackathon) \u2014 Demo: github.com/your-repo (if public) or 'demo available on request'."
+    },
+    {
+      "category": "formatting",
+      "severity": "low",
+      "issue": "Contact block lacks location and optional GitHub/portfolio link which help recruiter filtering.",
+      "recommendation": "Add city/country and GitHub or portfolio link if available; keep the contact line single-line for ATS extraction.",
+      "example_rewrite": "Rohit Sapkota | Perth, Australia | rohitsapkota1@gmail.com | (+61) 415 379 080 | linkedin.com/in/rohit-sapkota | github.com/your-username"
+    },
+    {
+      "category": "education",
+      "severity": "medium",
+      "issue": "No Education section is present \u2014 absence can trigger recruiter questions even if not required.",
+      "recommendation": "If you have relevant academic credentials, add a short Education section (degree, institution, year). If not applicable, consider an 'Additional training' line or omit entirely.",
+      "example_rewrite": "Education\nB.Sc. Computer Science \u2014 [University Name], [Year] (add if applicable)"
+    },
+    {
+      "category": "clarity",
+      "severity": "low",
+      "issue": "Some bullets use passive phrasing or redundant terms (e.g., 'improving consistency, traceability, and deployment safety').",
+      "recommendation": "Tighten bullets to active verbs and one clear outcome per line for faster skimming.",
+      "example_rewrite": "Implemented Pulumi (TypeScript) IaC to standardise stacks, reducing configuration drift and improving rollback safety."
+    },
+    {
+      "category": "ats",
+      "severity": "low",
+      "issue": "Unicode characters and long inline qualification phrases in the original PDF can reduce ATS match-scores.",
+      "recommendation": "Use plain ASCII punctuation, short keyword-rich phrases, and avoid long parenthetical lists in bullets; maintain one simple heading per section.",
+      "example_rewrite": "CI/CD & Automation: GitHub Actions, GitLab, JFrog, AWX, pipeline design"
+    },
+    {
+      "category": "skills",
+      "severity": "low",
+      "issue": "Certifications list is long and not prioritized \u2014 important AI/cloud certs get diluted among older entries.",
+      "recommendation": "Group certifications into 'Key certifications' (AI, Cloud) and 'Additional certifications' (networking, courses) to highlight relevance to AI roles.",
+      "example_rewrite": "Key certifications\n- AWS Certified AI Practitioner \u2014 AWS (Apr 2025)\n- Deep Learning Specialisation \u2014 DeepLearning.AI (Oct 2025)\n\nAdditional certifications\n- CCNA: Enterprise Networking \u2014 Cisco (Jun 2024)\n- Foundations of Project Management \u2014 Google (Dec 2022)"
+    }
+  ],
+  "applied_user_updates": [
+    "Added a concise professional title line ('DevOps Engineer') beneath contact details.",
+    "Inserted a Skills / Technical Summary section with categorized, ATS-friendly keyword lists.",
+    "Normalized bullet formatting and removed excessive mid-sentence line breaks and special whitespace.",
+    "Standardized the Certifications section to one certification per line for improved readability and ATS parsing.",
+    "Reordered sections to: Skills, Experience, Projects, Certifications (improves recruiter scanning for technical roles)."
+  ],
+  "skipped_user_updates": []
+}

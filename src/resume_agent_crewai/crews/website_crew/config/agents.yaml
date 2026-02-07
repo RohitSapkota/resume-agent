@@ -9,26 +9,6 @@ content_strategist:
     and crisp section labeling.
   max_iter: 1
 
-visual_designer:
-  role: >
-    Visual Designer
-  goal: >
-    Define a distinctive, modern visual direction with typography, spacing, and color choices
-    that are readable and professional on both mobile and desktop.
-  backstory: >
-    You create intentional, bold web aesthetics and can describe them precisely for build handoff.
-  max_iter: 1
-
-accessibility_reviewer:
-  role: >
-    Accessibility Reviewer
-  goal: >
-    Review the planned structure and styling for semantic HTML, contrast, and keyboard-friendly
-    interactions; provide actionable fixes.
-  backstory: >
-    You ensure web experiences are inclusive, with pragmatic, standards-aligned guidance.
-  max_iter: 1
-
 website_engineer:
   role: >
     Senior Frontend Engineer

@@ -1,0 +1,222 @@
+%PDF-1.4
+%����
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 3267 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+48 744 Td
+(Rohit Sapkota | rohitsapkota1@gmail.com | \(+61\) 415 379 080 | linkedin.com/in/rohit-sapkota) Tj
+T*
+() Tj
+T*
+(DevOps Engineer) Tj
+T*
+() Tj
+T*
+(Skills) Tj
+T*
+(- Languages & Scripting: Bash, Python, TypeScript, Java) Tj
+T*
+(- CI/CD & Automation: GitHub Actions, GitLab, JFrog Artifactory, AWX, pipeline design) Tj
+T*
+(- Cloud & Infrastructure: AWS \(Lambda, EKS\), Kubernetes, Pulumi \(TypeScript\)) Tj
+T*
+(- APIs & Integration: REST, GraphQL, Jira Service Management \(JSM\)) Tj
+T*
+(- ML & AI Adjacent: TensorFlow Federated, GPT-based LLMs, prompt engineering) Tj
+T*
+(- Frameworks & Platforms: Java Spring Boot) Tj
+T*
+() Tj
+T*
+(Experience) Tj
+T*
+() Tj
+T*
+(RACING AND WAGERING WESTERN AUSTRALIA \(RWWA\) — DevOps Engineer | Feb 2023 – Present) Tj
+T*
+(- Led a CI/CD modernisation initiative migrating from GitLab to GitHub Actions, reducing deployment) Tj
+T*
+(time by ~30% and significantly improving release reliability.) Tj
+T*
+(- Eliminated frequent pipeline failures by decommissioning unstable legacy tooling \(JFrog) Tj
+T*
+(Artifactory, AWX\), resulting in near-zero CI/CD failures post-migration.) Tj
+T*
+(- Reduced platform complexity by consolidating CI/CD and deployment workflows on GitHub and) Tj
+T*
+(AWS-native services, lowering operational overhead.) Tj
+T*
+(- Designed and automated CI/CD workflows using Bash and Python, enabling faster, reproducible) Tj
+T*
+(iteration cycles for data- and AI-driven workloads.) Tj
+T*
+(- Implemented infrastructure-as-code using Pulumi \(TypeScript\) to provision modern cloud stacks,) Tj
+T*
+(improving consistency, traceability, and deployment safety.) Tj
+T*
+(- Built event-driven AWS Lambda automation to monitor Windows and Linux AMI updates and trigger) Tj
+T*
+(downstream build pipelines, improving security posture and eliminating manual checks.) Tj
+T*
+(- Operated and scaled Kubernetes infrastructure on AWS EKS, ensuring highly available execution) Tj
+T*
+(environments for platform, data, and automation workloads.) Tj
+T*
+(- Automated change management by integrating CI/CD workflows with Jira Service Management \(JSM\) via) Tj
+T*
+(REST and GraphQL APIs, reducing manual approvals and improving end-to-end release throughput.) Tj
+T*
+() Tj
+T*
+(DDD PERTH — Volunteer Team Lead | September 2025) Tj
+T*
+(- Led a volunteer team, coordinating delivery and technical direction for community-driven) Tj
+T*
+(initiatives.) Tj
+T*
+() Tj
+T*
+(INFODEVELOPERS PVT. LTD., Nepal — Software Engineer | Nov 2020 – Mar 2022) Tj
+T*
+(- Built a Java Spring Boot platform automating government workflows, reducing manual processing by) Tj
+T*
+(approximately 80%.) Tj
+T*
+(- Designed RESTful APIs and contributed to a microservices architecture improving scalability,) Tj
+T*
+(integration, and system reliability.) Tj
+T*
+(- Integrated digital signature and secure authentication mechanisms to protect sensitive data.) Tj
+T*
+() Tj
+T*
+(Projects) Tj
+T*
+() Tj
+T*
+(Enterprise CI/CD Modernisation and GitHub Migration \(RWWA\)) Tj
+T*
+(- Architected and executed a migration from GitLab to GitHub Actions, consolidating CI/CD tooling) Tj
+T*
+(and removing multiple failure-prone dependencies.) Tj
+T*
+(- Standardised pipeline patterns and IaC-driven deployments, improving reliability, maintainability,) Tj
+T*
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 2428 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+48 744 Td
+(and auditability across services.) Tj
+T*
+(- Enabled faster, more reproducible deployments suitable for AI experimentation and model lifecycle) Tj
+T*
+(workflows.) Tj
+T*
+() Tj
+T*
+(Federated Anomaly Detection for IoT \(Curtin University\)) Tj
+T*
+(- Designed a federated learning architecture enabling privacy-preserving anomaly detection across) Tj
+T*
+(distributed IoT devices.) Tj
+T*
+(- Validated the approach using TensorFlow Federated, enabling secure training on high-sensitivity) Tj
+T*
+(datasets without centralising data.) Tj
+T*
+() Tj
+T*
+(Generative AI Gambling Help Chatbot \(RWWA Hackathon\)) Tj
+T*
+(- Built a generative AI chatbot providing anonymous, empathetic support using GPT-based LLMs and) Tj
+T*
+(prompt engineering.) Tj
+T*
+() Tj
+T*
+(Certifications) Tj
+T*
+(- Design, Develop, and Deploy Multi-Agent Systems with CrewAI — DeepLearning.AI \(Jan 2026\)) Tj
+T*
+(- Agentic AI — DeepLearning.AI \(Nov 2025\)) Tj
+T*
+(- Deep Learning Specialisation — DeepLearning.AI \(Oct 2025\)) Tj
+T*
+(- Sequence Models — DeepLearning.AI \(Oct 2025\)) Tj
+T*
+(- Convolutional Neural Networks — DeepLearning.AI \(Apr 2025\)) Tj
+T*
+(- Structuring Machine Learning Projects — DeepLearning.AI \(Apr 2025\)) Tj
+T*
+(- AWS Certified AI Practitioner — AWS \(Apr 2025\)) Tj
+T*
+(- Improving Deep Neural Networks: Hyperparameters, Tuning, Regularisation and Optimisation —) Tj
+T*
+(DeepLearning.AI \(Apr 2025\)) Tj
+T*
+(- Neural Networks and Deep Learning — DeepLearning.AI \(Mar 2025\)) Tj
+T*
+(- Generative AI with Large Language Models — DeepLearning.AI, AWS \(Mar 2025\)) Tj
+T*
+(- CCNA: Enterprise Networking, Security and Automation — Cisco \(Jun 2024\)) Tj
+T*
+(- CCNA: Switching, Routing, and Wireless Essentials — Cisco \(Jun 2024\)) Tj
+T*
+(- CCNA: Introduction to Networks — Cisco \(Jun 2024\)) Tj
+T*
+(- Linear Algebra for Machine Learning and Data Science — DeepLearning.AI \(Jan 2024\)) Tj
+T*
+(- Foundations of Project Management — Google \(Dec 2022\)) Tj
+T*
+(- Learning How to Learn — Deep Teaching Solutions \(Dec 2022\)) Tj
+T*
+(- Python Programming: A Concise Introduction — Wesleyan University \(Dec 2022\)) Tj
+T*
+(- Curtin Leaders Program — Curtin University \(Nov 2022\)) Tj
+T*
+(- Google Cloud – Scientific Data Processing — Google Cloud Skills Boost \(May 2019\)) Tj
+T*
+(- Google Cloud – Baseline: Data, ML, AI — Google Cloud Skills Boost \(Mar 2019\)) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000323 00000 n 
+0000003642 00000 n 
+0000003768 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+6248
+%%EOF

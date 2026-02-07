@@ -1,0 +1,27 @@
+{
+  "generated_at_utc": "2026-02-07T03:01:35.944946+00:00",
+  "flow_path": "create_website",
+  "flow_version": "resume-flow-v2",
+  "cache": {
+    "key": "03dea84d8f463939b98ecc82575c96298f56f8c4221b0798f99097183db05784",
+    "hit": false
+  },
+  "resume": {
+    "source_pdf_path": "/Users/d3a7h/Rohit/Projects/resume_agent_crewai/src/resume_agent_crewai/Resume.pdf",
+    "source_pdf_hash": "d44816574212c446b688ed68fd09b8b3672de8baa8b9693306ba22e2ba0fda21",
+    "updated_pdf_path": "/Users/d3a7h/Rohit/Projects/resume_agent_crewai/src/resume_agent_crewai/resume_updated.pdf",
+    "review_json_path": "/Users/d3a7h/Rohit/Projects/resume_agent_crewai/src/resume_agent_crewai/artifacts/review.json"
+  },
+  "website": {
+    "title": "Rohit Sapkota \u2014 DevOps Engineer (Resume)",
+    "output_dir": "/Users/d3a7h/Rohit/Projects/resume_agent_crewai/docs",
+    "index_html": "/Users/d3a7h/Rohit/Projects/resume_agent_crewai/docs/index.html",
+    "styles_css": "/Users/d3a7h/Rohit/Projects/resume_agent_crewai/docs/styles.css",
+    "script_js": "/Users/d3a7h/Rohit/Projects/resume_agent_crewai/docs/script.js"
+  },
+  "site_files": {
+    "index_html": "/Users/d3a7h/Rohit/Projects/resume_agent_crewai/docs/index.html",
+    "styles_css": "/Users/d3a7h/Rohit/Projects/resume_agent_crewai/docs/styles.css",
+    "script_js": "/Users/d3a7h/Rohit/Projects/resume_agent_crewai/docs/script.js"
+  }
+}

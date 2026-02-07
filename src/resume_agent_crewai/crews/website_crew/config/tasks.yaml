@@ -1,7 +1,12 @@
 craft_content_outline:
   description: >
-    From `resume_text`, extract a clean information architecture: section order, concise headings,
-    and scannable hierarchy. Include guidance on emphasis/de-emphasis. Do not invent content or add facts.
+    From `resume_text`, extract a clean information architecture and concise implementation guidance:
+    - section order and hierarchy
+    - emphasis/de-emphasis
+    - typography direction
+    - spacing and color direction
+    - accessibility requirements (semantic HTML, contrast, focus states, keyboard support)
+    Do not invent content or add facts.
     Return ONLY valid JSON. Do not wrap in markdown or add commentary.
     
     Resume text:
@@ -11,41 +16,9 @@ craft_content_outline:
     - sections (array of objects: {heading, guidance[]})
     - reorganizations (array of strings)
     - narrative_emphasis (string)
+    - visual_direction (object with typography, spacing, palette, motifs)
+    - accessibility_requirements (array of strings)
   agent: content_strategist
-  async_execution: true
-
-define_visual_direction:
-  description: >
-    Propose a distinctive visual direction for the resume site: typography pairing, spacing scale,
-    color palette, and layout motifs. Keep it professional, readable, and responsive. Be specific.
-    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
-    
-    Resume text:
-    {resume_text}
-  expected_output: >
-    A JSON object with:
-    - typography (object: {primary, secondary, usage})
-    - spacing (object: {scale, rules})
-    - palette (array of objects: {name, hex, role})
-    - motifs (array of strings)
-  agent: visual_designer
-  async_execution: true
-
-audit_accessibility:
-  description: >
-    Review structure/design guidance. Identify accessibility risks and propose fixes for semantic HTML,
-    contrast, focus states, and keyboard navigation.
-    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
-    
-    Resume text:
-    {resume_text}
-  expected_output: >
-    A JSON object with:
-    - risks (array of strings)
-    - fixes (array of strings)
-    - requirements (array of strings)
-  agent: accessibility_reviewer
-  context: [craft_content_outline, define_visual_direction]
 
 generate_resume_site:
   description: >
@@ -69,4 +42,4 @@ generate_resume_site:
     - css (string) stylesheet content for "styles.css"
     - js (string) script content for "script.js"
   agent: website_engineer
-  context: [craft_content_outline, define_visual_direction, audit_accessibility]
+  context: [craft_content_outline]

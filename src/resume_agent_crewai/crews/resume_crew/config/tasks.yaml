@@ -1,74 +1,73 @@
-analyze_structure:
+read_resume_pdf:
   description: >
-    Diagnose structure/clarity issues in the resume below. Identify missing/weak sections,
-    ordering problems, and unclear or redundant content. Propose an improved outline for
-    software/technology roles.
-    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
-    
-    Resume text:
-    {resume_text}
+    Use the `read_resume_pdf` tool to read the source resume from:
+    `{resume_pdf_path}`
+    Return ONLY valid JSON. Do not wrap in markdown.
+
+    Rules:
+    - Call the tool and capture the extracted text.
+    - Do not invent missing text.
+    - Keep content factual and unchanged at this stage.
   expected_output: >
     A JSON object with:
-    - recommended_section_order (array of strings)
-    - missing_or_weak_sections (array of strings)
-    - clarity_issues (array of strings, 5–10 items)
-  agent: resume_analyst
-  async_execution: true
+    - source_pdf_path (string)
+    - resume_text (string, extracted content)
+    - extraction_notes (array of strings)
+  agent: resume_reader_writer
 
-rewrite_for_impact:
+review_resume:
   description: >
-    Rewrite the weakest experience/project bullets from the resume below to be specific, measurable,
-    and impact-led. Focus on scope, ownership, outcomes, and technical specificity.
-    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
-    
-    Resume text:
-    {resume_text}
-  expected_output: >
-    A JSON array of 6–12 objects, each with:
-    - original_bullet (verbatim)
-    - improved_bullet (rewritten)
-  agent: impact_editor
-  async_execution: true
-
-check_ats_alignment:
-  description: >
-    Review ATS readiness and keyword alignment for software/technology roles based on `resume_text`.
-    Identify parsing risks, formatting pitfalls, and missing/weakly signaled skills. Suggest
-    keyword additions that fit the resume content without stuffing.
-    Return ONLY valid JSON. Do not wrap in markdown or add commentary.
-    
-    Resume text:
-    {resume_text}
+    Review the extracted resume against AI/software hiring quality and ATS readiness in one pass.
+    Evaluate:
+    - clarity and scannability
+    - ownership and measurable impact
+    - technical depth and role relevance
+    - keyword signaling and parseability risks
+    Use ONLY `resume_text` from prior task. Do not invent facts.
+    Return ONLY valid JSON. Do not wrap in markdown.
   expected_output: >
     A JSON object with:
+    - strengths (array of strings)
+    - high_priority_gaps (array of strings)
+    - medium_priority_gaps (array of strings)
     - ats_risks (array of strings)
-    - keyword_gaps (array of strings)
+    - keyword_signal_gaps (array of strings)
     - formatting_fixes (array of strings)
-  agent: ats_reviewer
-  async_execution: true
+    - section_order_recommendation (array of strings)
+    - ai_engineer_fit_assessment (string)
+  agent: resume_reviewer
+  context: [read_resume_pdf]
 
-read_resume:
+finalize_resume_and_write_pdf:
   description: >
-    Synthesize prior analyses and incorporate the user's requested changes (`user_input`) into a
-    prioritized, high-signal feedback list. Use `resume_text` for grounding. Focus on clarity,
-    impact, relevance, and ATS readiness. Provide concrete rewrites for the most important fixes.
-    Enforce strict quality: no generic advice and no duplicative items.
-    Return ONLY valid JSON. Do not wrap in markdown or add commentary. Use only information in `resume_text`
-    and `user_input`. Do not invent facts or metrics.
-    
-    Resume text:
-    {resume_text}
-    
-    User input:
-    {user_input}
+    Produce final prioritized feedback and final resume content, then write it as a new PDF.
+    Inputs:
+    - Extracted resume text from prior task.
+    - Consolidated review guidance from prior task.
+    - Optional user-requested additions/changes:
+      {user_input}
+
+    Use the `write_resume_pdf` tool with:
+    - resume_text = final revised resume text
+    - output_path = {output_pdf_path}
+
+    Required rules:
+    - Preserve factual integrity: do not add facts.
+    - Apply valid user updates and report skipped ones.
+    - Prioritize fixes for AI engineer hiring outcomes.
+    - Ensure output is machine-readable JSON only.
+    - `updated_pdf_path` must be the path returned by the tool call.
   expected_output: >
-    A JSON array of feedback items. Each item must include:
-    - category (one of: "structure", "clarity", "impact", "skills", "experience", "projects",
-      "education", "formatting", "ats")
-    - severity ("high" | "medium" | "low")
-    - issue (short description)
-    - recommendation (specific fix)
-    - example_rewrite (optional string)
-    Keep the list prioritized by severity, then impact. Include 8–18 items total.
+    A JSON object with:
+    - final_resume_text (string)
+    - updated_pdf_path (string)
+    - applied_user_updates (array of strings)
+    - skipped_user_updates (array of strings)
+    - feedback_items (array of 8-18 objects with:
+      category one of ["structure","clarity","impact","skills","experience","projects","education","formatting","ats","ai_focus"],
+      severity one of ["high","medium","low"],
+      issue string,
+      recommendation string,
+      example_rewrite optional string)
   agent: hiring_manager
-  context: [analyze_structure, rewrite_for_impact, check_ats_alignment]
+  context: [read_resume_pdf, review_resume]

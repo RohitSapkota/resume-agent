@@ -25,11 +25,12 @@ crewai install
 
 ### Configuration
 
-**Add your `GEMINI_API_KEY` into the `.env` file**
+**Add your `GEMINI_API_KEY` and `OPENAI_API_KEY` into the `.env` file**
 
 Example `.env`:
 ```env
 GEMINI_API_KEY=your_key_here
+OPENAI_API_KEY=your_key_here
 ```
 
 ## Running the Project
@@ -45,17 +46,24 @@ This command initializes the `resume_agent_crewai` Flow as defined in your confi
 ## Outputs
 
 Depending on your flow configuration, you should expect:
-- Resume Crew: JSON feedback items (prioritized, actionable)
-- Website Crew: JSON with `title`, `html`, `css`, `js` fields
+- Resume Crew: finalized factual resume text, prioritized feedback, and a new updated PDF at `src/resume_agent_crewai/resume_updated.pdf`
+- Website Crew: `index.html`, `styles.css`, `script.js`, and `build_meta.json` written to `docs/`
 
 ## Crews Overview
 
 The project includes two crews:
 
-- Resume Crew: A multi-agent pipeline that analyzes structure, rewrites for impact, checks ATS alignment, and synthesizes prioritized feedback.
-- Website Crew: A multi-agent pipeline that defines content structure, visual direction, accessibility guidance, and generates the final HTML/CSS/JS.
+- Resume Crew: A reader/writer + analysis pipeline that reads `Resume.pdf` via tool, evaluates and rewrites to a high AI-engineer standard, preserves factual content, and writes an updated PDF.
+- Website Crew: A pipeline that transforms reviewed resume content into a static GitHub Pages-friendly site.
 
-Task execution is optimized so independent tasks run in parallel (`async_execution: true`) while dependent tasks receive upstream outputs via `context`. This keeps sequential execution a necessity only when required by data dependencies.
+## New Core Flow
+
+1. User selects one path: `update_resume` or `create_website`.
+2. `update_resume`: runs only the Resume Crew and outputs `resume_updated.pdf`.
+3. `create_website`: runs Resume Crew first, then Website Crew using the reviewed resume text.
+4. User-requested additions (for example, new experience or certifications) are incorporated without inventing facts.
+
+Task coordination supports parallel execution where configured (`async_execution: true`) and uses `context` for dependent handoffs. In the new resume-first flow, resume tasks are intentionally sequential for strict factual control.
 
 Crew configuration lives in:
 - `src/resume_agent_crewai/crews/resume_crew/config/agents.yaml`
@@ -65,7 +73,7 @@ Crew configuration lives in:
 
 ## How Task Coordination Works
 
-Independent tasks run in parallel using `async_execution: true`. Dependent tasks receive upstream outputs via `context`. This makes sequential execution a necessity only when required by data dependencies.
+Independent tasks run in parallel only where `async_execution: true` is configured. Dependent tasks receive upstream outputs via `context`, and sequential execution is used where strict ordering is required.
 
 ## Common Changes
 
@@ -79,6 +87,11 @@ If you want to customize behavior:
 Run the flow:
 ```bash
 crewai run
+```
+
+Trigger-based run example:
+```bash
+run_with_trigger '{"user_request":"create a resume website and include my latest certification"}'
 ```
 
 If you want to execute only one crew, update the flow entrypoint in:

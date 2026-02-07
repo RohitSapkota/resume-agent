@@ -1,62 +1,86 @@
 [
   {
-    "category": "Header & Personal Branding",
-    "observation": "Missing or outdated professional social proof.",
-    "feedback": "Ensure your GitHub profile and LinkedIn URL are hyperlinked and up-to-date. For technology roles, a GitHub profile with recent activity acts as a secondary portfolio. Ensure your LinkedIn profile is set to 'Open to Work' for recruiters and reflects the same data as your resume.",
-    "action_item": "Add GitHub, LinkedIn, and a link to a personal portfolio/blog if applicable."
+    "category": "structure",
+    "severity": "high",
+    "issue": "No concise professional summary that frames current career focus for AI/MLOps roles.",
+    "recommendation": "Add a 1\u20132 line professional summary under the name/title that highlights immediate focus areas (cloud infra, CI/CD, MLOps-adjacent tooling) and the value you bring.",
+    "example_rewrite": "DevOps Engineer focused on AWS infrastructure, CI/CD modernisation (GitHub Actions), and enabling reproducible AI experimentation through IaC (Pulumi) and automated pipelines."
   },
   {
-    "category": "Professional Summary",
-    "observation": "Using a generic 'Objective' statement instead of a 'Technical Summary'.",
-    "feedback": "Hiring managers spend 6 seconds on the initial screen. An objective tells me what you want; a summary tells me what you can do for me. Focus on years of experience, primary tech stack (e.g., MERN, AWS, Java/Spring), and a major high-level achievement.",
-    "action_item": "Replace the 'Objective' with a 3-sentence 'Technical Profile' highlighting your core architectural strengths and years of specialized experience."
+    "category": "skills",
+    "severity": "high",
+    "issue": "Missing key AI-engineering / MLOps keywords that ATS and hiring managers expect (e.g., Docker, model serving, registries, monitoring).",
+    "recommendation": "If you have experience with these, add them to Skills as distinct entries (Docker, MLflow/SageMaker/ML registries, Prometheus/Grafana, model serving frameworks). If not, avoid listing unfamiliar tools.",
+    "example_rewrite": "Skills\n- Containers & Runtime: Docker\n- Model Ops: MLflow, SageMaker, model registry (add only if experienced)\n- Observability: Prometheus, Grafana, CloudWatch"
   },
   {
-    "category": "Technical Skills Section",
-    "observation": "Skills are listed as a single 'keyword cloud' block.",
-    "feedback": "A wall of text is difficult for human eyes to parse. Grouping skills helps hiring managers quickly identify if your stack aligns with their team's needs.",
-    "action_item": "Categorize skills into sub-sections: 'Languages', 'Frameworks/Libraries', 'Cloud/DevOps', 'Databases', and 'Tools' (e.g., Docker, Kubernetes, Git)."
+    "category": "ats",
+    "severity": "high",
+    "issue": "Residual date inconsistency and a future-dated role (DDD PERTH \u2014 September 2025) may confuse ATS/recruiters.",
+    "recommendation": "Confirm the correct date for the volunteer role and correct it to past or present as appropriate; use a standardized format (e.g., 'Sep 2025' or 'Sep 2025 \u2013 Present').",
+    "example_rewrite": "DDD PERTH \u2014 Volunteer Team Lead | Sep 2023 \u2013 Present (confirm actual dates)"
   },
   {
-    "category": "Work Experience - Impact",
-    "observation": "Bullet points describe 'Responsibilities' rather than 'Achievements'.",
-    "feedback": "In tech, it is assumed you coded. I need to know the scale and impact. Statements like 'Responsible for maintaining the database' are weak.",
-    "action_item": "Use the Google XYZ Formula: 'Accomplished [X] as measured by [Y], by doing [Z]'. Example: 'Optimized SQL queries (Z) reducing API latency by 40% (Y) for a platform with 100k DAU (X).'"
+    "category": "impact",
+    "severity": "medium",
+    "issue": "Many bullets show positive outcomes but lack ownership and scale context (team size, number of services, frequency of deployments).",
+    "recommendation": "Where possible, add concise scope/scale metrics to strengthen impact statements (services affected, team size, deployment cadence).",
+    "example_rewrite": "Led CI/CD migration for ~[N] microservices, enabling daily deployments and reducing mean time to release by ~30%."
   },
   {
-    "category": "Tech Stack Context",
-    "observation": "It is unclear which tools were used for specific projects.",
-    "feedback": "Recruiters look for recency of tool usage. If you list React in your skills, I need to see it mentioned in your most recent role to confirm your skills are current.",
-    "action_item": "At the end of each job description or project, add a 'Tech Stack:' line (e.g., Tech Stack: Python, Django, AWS Lambda, PostgreSQL, Terraform)."
+    "category": "ai_focus",
+    "severity": "medium",
+    "issue": "AI / ML project descriptions are brief and do not state model infra details (training scale, inference serving, monitoring or experiment tracking).",
+    "recommendation": "Expand project bullets to name frameworks/tools used for training, serving, experiment tracking and any measurable result or validation.",
+    "example_rewrite": "Federated Anomaly Detection \u2014 Built privacy-preserving pipeline using TensorFlow Federated; integrated experiment tracking with [Tool] and validated model AUC on distributed datasets."
   },
   {
-    "category": "Quantification of Data",
-    "observation": "Lack of metrics regarding scale.",
-    "feedback": "Technology is about scale. Working on a tool for 5 people is different than 5,000,000. Mentioning data volume, user count, or cost savings provides necessary context.",
-    "action_item": "Audit every bullet point and try to include at least one number (percentages, dollar amounts, time saved, or headcount)."
+    "category": "experience",
+    "severity": "medium",
+    "issue": "Ownership and leadership details are sparse (no counts for engineers/volunteers, product/service ownership).",
+    "recommendation": "Add brief statements of scope where accurate (e.g., 'owned CI/CD for X services' or 'led a team of Y volunteers'). Use placeholders if verifying later, but do not invent numbers.",
+    "example_rewrite": "Owned CI/CD and deployments for X services across production and staging environments (confirm and replace X)."
   },
   {
-    "category": "Projects Section",
-    "observation": "Academic or 'Tutorial' projects (like a To-Do list) are included.",
-    "feedback": "For tech roles, 'Tutorial' projects can actually hurt your candidacy by making you look like a beginner. I look for 'Real-World' complexity—apps that are deployed, have users, or solve a specific complex niche problem.",
-    "action_item": "Replace generic projects with ones that demonstrate System Design knowledge, such as an application using microservices, a CI/CD pipeline, or an open-source contribution."
+    "category": "projects",
+    "severity": "medium",
+    "issue": "Project entries lack links to code, demos, or documentation that would substantiate claims.",
+    "recommendation": "Add GitHub/Colab/notebook links for projects you can share, or state 'private/restricted' where applicable to avoid confusion.",
+    "example_rewrite": "Generative AI Gambling Help Chatbot (RWWA Hackathon) \u2014 Demo: github.com/your-repo (if public) or 'demo available on request'."
   },
   {
-    "category": "ATS Optimization",
-    "observation": "Complex formatting (columns, tables, or graphics) that may break parsing.",
-    "feedback": "Applicant Tracking Systems (ATS) often struggle with multi-column layouts or images. If the software can't read your resume, it won't reach my desk.",
-    "action_item": "Switch to a clean, single-column, standard font (Arial, Calibri) layout. Use standard section headers like 'Experience' and 'Education'."
+    "category": "formatting",
+    "severity": "low",
+    "issue": "Contact block lacks location and optional GitHub/portfolio link which help recruiter filtering.",
+    "recommendation": "Add city/country and GitHub or portfolio link if available; keep the contact line single-line for ATS extraction.",
+    "example_rewrite": "Rohit Sapkota | Perth, Australia | rohitsapkota1@gmail.com | (+61) 415 379 080 | linkedin.com/in/rohit-sapkota | github.com/your-username"
   },
   {
-    "category": "Cloud & Infrastructure",
-    "observation": "Lack of mention regarding deployment or environment.",
-    "feedback": "Modern software engineering is inseparable from the cloud. Even for frontend roles, knowing how your code is deployed is a huge plus.",
-    "action_item": "Explicitly mention experience with AWS, Azure, GCP, or even Heroku/Vercel. Include keywords like 'CI/CD', 'Unit Testing', or 'Containerization' if you have that experience."
+    "category": "education",
+    "severity": "medium",
+    "issue": "No Education section is present \u2014 absence can trigger recruiter questions even if not required.",
+    "recommendation": "If you have relevant academic credentials, add a short Education section (degree, institution, year). If not applicable, consider an 'Additional training' line or omit entirely.",
+    "example_rewrite": "Education\nB.Sc. Computer Science \u2014 [University Name], [Year] (add if applicable)"
   },
   {
-    "category": "Education & Certifications",
-    "observation": "Education is at the top despite having work experience.",
-    "feedback": "Once you have 1+ years of experience in tech, your work history is more valuable than your degree. Your experience should lead the document.",
-    "action_item": "Move the Education section to the bottom of the resume and prioritize Technical Certifications (e.g., AWS Certified Developer) just above it."
+    "category": "clarity",
+    "severity": "low",
+    "issue": "Some bullets use passive phrasing or redundant terms (e.g., 'improving consistency, traceability, and deployment safety').",
+    "recommendation": "Tighten bullets to active verbs and one clear outcome per line for faster skimming.",
+    "example_rewrite": "Implemented Pulumi (TypeScript) IaC to standardise stacks, reducing configuration drift and improving rollback safety."
+  },
+  {
+    "category": "ats",
+    "severity": "low",
+    "issue": "Unicode characters and long inline qualification phrases in the original PDF can reduce ATS match-scores.",
+    "recommendation": "Use plain ASCII punctuation, short keyword-rich phrases, and avoid long parenthetical lists in bullets; maintain one simple heading per section.",
+    "example_rewrite": "CI/CD & Automation: GitHub Actions, GitLab, JFrog, AWX, pipeline design"
+  },
+  {
+    "category": "skills",
+    "severity": "low",
+    "issue": "Certifications list is long and not prioritized \u2014 important AI/cloud certs get diluted among older entries.",
+    "recommendation": "Group certifications into 'Key certifications' (AI, Cloud) and 'Additional certifications' (networking, courses) to highlight relevance to AI roles.",
+    "example_rewrite": "Key certifications\n- AWS Certified AI Practitioner \u2014 AWS (Apr 2025)\n- Deep Learning Specialisation \u2014 DeepLearning.AI (Oct 2025)\n\nAdditional certifications\n- CCNA: Enterprise Networking \u2014 Cisco (Jun 2024)\n- Foundations of Project Management \u2014 Google (Dec 2022)"
   }
 ]

@@ -1,5 +1,4 @@
-// script.js
-// Minimal, purposeful JS: print button and certification expand toggle if necessary.
+// script.js — minimal, purposeful behavior
 document.addEventListener('DOMContentLoaded', function(){
   var printBtn = document.getElementById('printBtn');
   if(printBtn){
@@ -8,14 +7,15 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  // Improve keyboard focus order: ensure skip link focuses main when used
+  // Improve skip link behaviour for older browsers
   var skip = document.querySelector('.skip-link');
   if(skip){
     skip.addEventListener('click', function(e){
       var main = document.getElementById('main');
       if(main){
         main.setAttribute('tabindex','-1');
-        main.focus();
+        main.focus({preventScroll:false});
+        main.removeAttribute('tabindex');
       }
     });
   }
